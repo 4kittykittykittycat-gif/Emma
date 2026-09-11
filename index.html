@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Emma Hess 💙</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background:
+                radial-gradient(circle at top, #168cff, transparent 35%),
+                linear-gradient(180deg, #03152f, #020817);
+            color: white;
+            overflow-x: hidden;
+        }
+
+        /* NAVBAR */
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 18px 40px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            background: rgba(2, 8, 23, 0.75);
+            backdrop-filter: blur(15px);
+
+            border-bottom: 1px solid rgba(100, 220, 255, 0.2);
+
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            color: #69dcff;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            transition: 0.2s;
+        }
+
+        nav a:hover {
+            color: #69dcff;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+
+            padding: 120px 20px 80px;
+        }
+
+        .hero-content {
+            max-width: 900px;
+        }
+
+        .hero h1 {
+            font-size: clamp(55px, 10vw, 120px);
+
+            color: #75e3ff;
+
+            text-shadow:
+                0 0 15px #00bfff,
+                0 0 40px #008cff,
+                0 0 80px #008cff;
+
+            animation: glow 3s infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow:
+                    0 0 15px #00bfff,
+                    0 0 35px #008cff;
+            }
+
+            to {
+                text-shadow:
+                    0 0 30px #00eaff,
+                    0 0 80px #008cff;
+            }
+        }
+
+        .hero p {
+            margin-top: 20px;
+            font-size: 22px;
+            color: #ccefff;
+        }
+
+        .hero-buttons {
+            margin-top: 35px;
+        }
+
+        button {
+            border: none;
+            padding: 15px 25px;
+
+            border-radius: 50px;
+
+            font-size: 17px;
+            font-weight: bold;
+
+            cursor: pointer;
+
+            background: #5edcff;
+            color: #03152f;
+
+            box-shadow: 0 0 25px rgba(0, 210, 255, 0.5);
+
+            transition: 0.25s;
+        }
+
+        button:hover {
+            transform: translateY(-4px) scale(1.05);
+            box-shadow: 0 0 40px rgba(0, 220, 255, 0.8);
+        }
+
+        .secondary {
+            margin-left: 10px;
+            background: transparent;
+            color: white;
+            border: 1px solid #5edcff;
+        }
+
+        /* SECTIONS */
+
+        section {
+            padding: 100px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 45px;
+            margin-bottom: 50px;
+        }
+
+        .section-title span {
+            color: #63ddff;
+        }
+
+        .cards {
+            max-width: 1100px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+            gap: 25px;
+        }
+
+        .card {
+            padding: 30px;
+
+            border-radius: 25px;
+
+            background: rgba(255, 255, 255, 0.07);
+
+            border: 1px solid rgba(100, 220, 255, 0.2);
+
+            backdrop-filter: blur(10px);
+
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+
+            border-color: #5edcff;
+
+            box-shadow: 0 15px 50px rgba(0, 180, 255, 0.2);
+        }
+
+        .card-icon {
+            font-size: 45px;
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            font-size: 25px;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: #c9dff0;
+            line-height: 1.6;
+        }
+
+        /* BLUE SECTION */
+
+        .blue-section {
+            text-align: center;
+
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .blue-word {
+            font-size: clamp(70px, 15vw, 180px);
+
+            font-weight: bold;
+
+            color: #63ddff;
+
+            text-shadow: 0 0 60px #008cff;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        .blue-word:hover {
+            transform: scale(1.08);
+        }
+
+        /* STATS */
+
+        .stats {
+            max-width: 1000px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+
+            gap: 20px;
+        }
+
+        .stat {
+            text-align: center;
+
+            padding: 30px;
+
+            border-radius: 20px;
+
+            background: rgba(255,255,255,0.06);
+        }
+
+        .stat-number {
+            font-size: 45px;
+            color: #63ddff;
+            font-weight: bold;
+        }
+
+        /* QUIZ */
+
+        .quiz {
+            max-width: 700px;
+            margin: auto;
+
+            text-align: center;
+
+            padding: 40px;
+
+            border-radius: 25px;
+
+            background: rgba(255,255,255,0.07);
+
+            border: 1px solid rgba(100,220,255,0.2);
+        }
+
+        .quiz-question {
+            font-size: 28px;
+            margin-bottom: 30px;
+        }
+
+        .quiz button {
+            margin: 8px;
+        }
+
+        #quizResult {
+            margin-top: 25px;
+            font-size: 22px;
+            min-height: 30px;
+        }
+
+        /* SURVIVAL SECTION */
+
+        .survival {
+            max-width: 800px;
+            margin: auto;
+
+            text-align: center;
+
+            padding: 50px;
+
+            border-radius: 30px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(0,120,255,0.2),
+                    rgba(0,20,50,0.5)
+                );
+
+            border: 1px solid rgba(100,220,255,0.3);
+        }
+
+        .survival h2 {
+            font-size: 45px;
+        }
+
+        .survival p {
+            margin: 20px 0;
+            color: #ccefff;
+            font-size: 19px;
+            line-height: 1.6;
+        }
+
+        /* FOOTER */
+
+        footer {
+            text-align: center;
+            padding: 60px 20px;
+
+            color: #8ebbd1;
+        }
+
+        /* FLOATING HEARTS */
+
+        .heart {
+            position: fixed;
+
+            bottom: -50px;
+
+            pointer-events: none;
+
+            animation: floatUp linear forwards;
+
+            z-index: 999;
+        }
+
+        @keyframes floatUp {
+
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-110vh) rotate(360deg);
+                opacity: 0;
+            }
+
+        }
+
+        /* POPUP */
+
+        .popup {
+            position: fixed;
+
+            inset: 0;
+
+            display: none;
+
+            justify-content: center;
+            align-items: center;
+
+            background: rgba(0,0,0,0.7);
+
+            z-index: 2000;
+        }
+
+        .popup-box {
+            max-width: 500px;
+
+            padding: 40px;
+
+            text-align: center;
+
+            border-radius: 25px;
+
+            background: #061b38;
+
+            border: 1px solid #5edcff;
+
+            box-shadow: 0 0 60px rgba(0,200,255,0.4);
+        }
+
+        .popup-box h2 {
+            font-size: 35px;
+            color: #63ddff;
+            margin-bottom: 15px;
+        }
+
+        @media(max-width:600px) {
+
+            nav {
+                padding: 15px;
+            }
+
+            nav a {
+                margin-left: 8px;
+                font-size: 13px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            .secondary {
+                margin-left: 0;
+                margin-top: 10px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+
+    <nav>
+
+        <div class="logo">
+            💙 EMMA HESS
+        </div>
+
+        <div>
+            <a href="#about">About</a>
+            <a href="#blue">Blue</a>
+            <a href="#quiz">Quiz</a>
+        </div>
+
+    </nav>
+
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <h1>EMMA HESS</h1>
+
+            <p>
+                The completely unbiased website proving that Emma is amazing.
+            </p>
+
+            <div class="hero-buttons">
+
+                <button onclick="appreciate()">
+                    💙 Appreciate Emma
+                </button>
+
+                <button
+                    class="secondary"
+                    onclick="scrollToSection('about')">
+                    Explore Website
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+
+    <section id="about">
+
+        <h2 class="section-title">
+            Why Emma Is <span>Amazing</span>
+        </h2>
+
+        <div class="cards">
+
+            <div class="card">
+
+                <div class="card-icon">💙</div>
+
+                <h3>Elite Taste</h3>
+
+                <p>
+                    Emma likes blue. This immediately demonstrates
+                    an extremely high level of taste.
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <div class="card-icon">⭐</div>
+
+                <h3>Simply Amazing</h3>
+
+                <p>
+                    After extensive scientific research,
+                    the results are conclusive:
+                    Emma is amazing.
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <div class="card-icon">🏆</div>
+
+                <h3>10/10</h3>
+
+                <p>
+                    Independent researchers have rated Emma
+                    a completely reasonable 10/10.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- BLUE -->
+
+    <section id="blue">
+
+        <div class="blue-section">
+
+            <h2 class="section-title">
+                The Most Important Thing
+            </h2>
+
+            <div
+                class="blue-word"
+                onclick="blueExplosion()">
+
+                BLUE
+
+            </div>
+
+            <p>
+                Emma loves blue.
+
+                <br><br>
+
+                Therefore blue is objectively the greatest color.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- STATS -->
+
+    <section>
+
+        <h2 class="section-title">
+            📊 Official Emma Statistics
+        </h2>
+
+        <div class="stats">
+
+            <div class="stat">
+
+                <div class="stat-number">100%</div>
+
+                <p>Amazing</p>
+
+            </div>
+
+            <div class="stat">
+
+                <div class="stat-number">∞</div>
+
+                <p>Blue Enjoyment</p>
+
+            </div>
+
+            <div class="stat">
+
+                <div class="stat-number">10/10</div>
+
+                <p>Overall Rating</p>
+
+            </div>
+
+            <div class="stat">
+
+                <div class="stat-number">💙</div>
+
+                <p>Blue Energy</p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- QUIZ -->
+
+    <section id="quiz">
+
+        <h2 class="section-title">
+            🧠 The Emma Quiz
+        </h2>
+
+        <div class="quiz">
+
+            <div class="quiz-question">
+                What is Emma's elite color?
+            </div>
+
+            <button onclick="quizAnswer('wrong')">
+                Red
+            </button>
+
+            <button onclick="quizAnswer('correct')">
+                💙 Blue
+            </button>
+
+            <button onclick="quizAnswer('wrong')">
+                Green
+            </button>
+
+            <div id="quizResult"></div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SURVIVAL -->
+
+    <section>
+
+        <div class="survival">
+
+            <h2>🙏 Please Spare Me</h2>
+
+            <p>
+                Emma, if you are reading this website,
+                please recognize the immense amount of effort
+                that went into documenting your greatness.
+            </p>
+
+            <button onclick="openPopup()">
+                Important Message
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        Made with 💙 for Emma Hess
+
+        <br><br>
+
+        © 2026 The Extremely Serious Emma Hess Foundation
+
+    </footer>
+
+
+    <!-- POPUP -->
+
+    <div class="popup" id="popup">
+
+        <div class="popup-box">
+
+            <h2>💙 IMPORTANT</h2>
+
+            <p>
+                Emma Hess is amazing.
+
+                <br><br>
+
+                Please remember this extremely important
+                scientific fact.
+            </p>
+
+            <br>
+
+            <button onclick="closePopup()">
+                I Understand 💙
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+        function appreciate() {
+
+            createHearts();
+
+            alert("💙 Emma appreciation activated.");
+
+        }
+
+
+        function createHearts() {
+
+            for (let i = 0; i < 20; i++) {
+
+                const heart = document.createElement("div");
+
+                heart.className = "heart";
+
+                heart.innerHTML = "💙";
+
+                heart.style.left =
+                    Math.random() * 100 + "vw";
+
+                heart.style.fontSize =
+                    (15 + Math.random() * 30) + "px";
+
+                heart.style.animationDuration =
+                    (3 + Math.random() * 4) + "s";
+
+                document.body.appendChild(heart);
+
+                setTimeout(() => {
+
+                    heart.remove();
+
+                }, 7000);
+
+            }
+
+        }
+
+
+        function blueExplosion() {
+
+            createHearts();
+
+            document.body.style.transition = "0.3s";
+
+            document.body.style.background =
+                "radial-gradient(circle, #00cfff, #03152f)";
+
+            setTimeout(() => {
+
+                document.body.style.background =
+                    "radial-gradient(circle at top, #168cff, transparent 35%), linear-gradient(180deg, #03152f, #020817)";
+
+            }, 800);
+
+        }
+
+
+        function quizAnswer(answer) {
+
+            const result =
+                document.getElementById("quizResult");
+
+            if (answer === "correct") {
+
+                result.innerHTML =
+                    "✅ CORRECT. Emma has elite taste. 💙";
+
+                createHearts();
+
+            } else {
+
+                result.innerHTML =
+                    "❌ WRONG. Please reconsider your answer.";
+
+            }
+
+        }
+
+
+        function scrollToSection(id) {
+
+            document
+                .getElementById(id)
+                .scrollIntoView({
+                    behavior: "smooth"
+                });
+
+        }
+
+
+        function openPopup() {
+
+            document
+                .getElementById("popup")
+                .style.display = "flex";
+
+        }
+
+
+        function closePopup() {
+
+            document
+                .getElementById("popup")
+                .style.display = "none";
+
+        }
+
+    </script>
+
+</body>
+
+</html>
