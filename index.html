@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -21,20 +22,26 @@
 
         body {
             font-family: Arial, sans-serif;
+
             background:
                 radial-gradient(circle at top, #168cff, transparent 35%),
                 linear-gradient(180deg, #03152f, #020817);
+
             color: white;
             overflow-x: hidden;
         }
 
-        /* NAVBAR */
+        /* =========================================================
+                            NAVBAR
+        ========================================================= */
 
         nav {
             position: fixed;
             top: 0;
             left: 0;
+
             width: 100%;
+
             padding: 18px 40px;
 
             display: flex;
@@ -42,6 +49,7 @@
             align-items: center;
 
             background: rgba(2, 8, 23, 0.75);
+
             backdrop-filter: blur(15px);
 
             border-bottom: 1px solid rgba(100, 220, 255, 0.2);
@@ -52,21 +60,33 @@
         .logo {
             font-size: 22px;
             font-weight: bold;
+
             color: #69dcff;
+
+            text-shadow:
+                0 0 10px #00bfff,
+                0 0 25px #008cff;
         }
 
         nav a {
             color: white;
             text-decoration: none;
+
             margin-left: 25px;
+
             transition: 0.2s;
         }
 
         nav a:hover {
             color: #69dcff;
+
+            text-shadow:
+                0 0 10px #00bfff;
         }
 
-        /* HERO */
+        /* =========================================================
+                            HERO
+        ========================================================= */
 
         .hero {
             min-height: 100vh;
@@ -98,6 +118,7 @@
         }
 
         @keyframes glow {
+
             from {
                 text-shadow:
                     0 0 15px #00bfff,
@@ -109,11 +130,14 @@
                     0 0 30px #00eaff,
                     0 0 80px #008cff;
             }
+
         }
 
         .hero p {
             margin-top: 20px;
+
             font-size: 22px;
+
             color: #ccefff;
         }
 
@@ -123,6 +147,7 @@
 
         button {
             border: none;
+
             padding: 15px 25px;
 
             border-radius: 50px;
@@ -133,26 +158,35 @@
             cursor: pointer;
 
             background: #5edcff;
+
             color: #03152f;
 
-            box-shadow: 0 0 25px rgba(0, 210, 255, 0.5);
+            box-shadow:
+                0 0 25px rgba(0, 210, 255, 0.5);
 
             transition: 0.25s;
         }
 
         button:hover {
             transform: translateY(-4px) scale(1.05);
-            box-shadow: 0 0 40px rgba(0, 220, 255, 0.8);
+
+            box-shadow:
+                0 0 40px rgba(0, 220, 255, 0.8);
         }
 
         .secondary {
             margin-left: 10px;
+
             background: transparent;
+
             color: white;
+
             border: 1px solid #5edcff;
         }
 
-        /* SECTIONS */
+        /* =========================================================
+                            SECTIONS
+        ========================================================= */
 
         section {
             padding: 100px 20px;
@@ -160,20 +194,32 @@
 
         .section-title {
             text-align: center;
+
             font-size: 45px;
+
             margin-bottom: 50px;
         }
 
         .section-title span {
             color: #63ddff;
+
+            text-shadow:
+                0 0 20px rgba(0, 200, 255, 0.6);
         }
+
+        /* =========================================================
+                            ABOUT CARDS
+        ========================================================= */
 
         .cards {
             max-width: 1100px;
+
             margin: auto;
 
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(250px, 1fr));
 
             gap: 25px;
         }
@@ -197,30 +243,37 @@
 
             border-color: #5edcff;
 
-            box-shadow: 0 15px 50px rgba(0, 180, 255, 0.2);
+            box-shadow:
+                0 15px 50px rgba(0, 180, 255, 0.2);
         }
 
         .card-icon {
             font-size: 45px;
+
             margin-bottom: 20px;
         }
 
         .card h3 {
             font-size: 25px;
+
             margin-bottom: 12px;
         }
 
         .card p {
             color: #c9dff0;
+
             line-height: 1.6;
         }
 
-        /* BLUE SECTION */
+        /* =========================================================
+                            BLUE SECTION
+        ========================================================= */
 
         .blue-section {
             text-align: center;
 
             max-width: 900px;
+
             margin: auto;
         }
 
@@ -231,7 +284,9 @@
 
             color: #63ddff;
 
-            text-shadow: 0 0 60px #008cff;
+            text-shadow:
+                0 0 30px #00bfff,
+                0 0 60px #008cff;
 
             cursor: pointer;
 
@@ -242,14 +297,145 @@
             transform: scale(1.08);
         }
 
-        /* STATS */
+        /* =========================================================
+                            GALLERY
+        ========================================================= */
 
-        .stats {
-            max-width: 1000px;
+        .gallery {
+            max-width: 1100px;
+
             margin: auto;
 
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+        .gallery-item {
+            position: relative;
+
+            overflow: hidden;
+
+            border-radius: 25px;
+
+            background: rgba(255, 255, 255, 0.07);
+
+            border: 1px solid rgba(100, 220, 255, 0.25);
+
+            box-shadow:
+                0 0 20px rgba(0, 180, 255, 0.12);
+
+            cursor: pointer;
+
+            transition: 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-8px) scale(1.02);
+
+            border-color: #5edcff;
+
+            box-shadow:
+                0 0 25px rgba(0, 210, 255, 0.4),
+                0 15px 50px rgba(0, 180, 255, 0.2);
+        }
+
+        .gallery-item img {
+            width: 100%;
+
+            height: 300px;
+
+            display: block;
+
+            object-fit: cover;
+
+            transition: 0.4s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.08);
+        }
+
+        /* =========================================================
+                            IMAGE POPUP
+        ========================================================= */
+
+        .image-popup {
+            position: fixed;
+
+            inset: 0;
+
+            display: none;
+
+            justify-content: center;
+            align-items: center;
+
+            padding: 30px;
+
+            background: rgba(0, 0, 0, 0.88);
+
+            backdrop-filter: blur(10px);
+
+            z-index: 3000;
+
+            cursor: pointer;
+        }
+
+        .image-popup img {
+            max-width: 90vw;
+
+            max-height: 85vh;
+
+            border-radius: 20px;
+
+            border: 2px solid #5edcff;
+
+            box-shadow:
+                0 0 30px #00bfff,
+                0 0 80px rgba(0, 140, 255, 0.7);
+
+            object-fit: contain;
+
+            cursor: default;
+        }
+
+        .close-image {
+            position: absolute;
+
+            top: 25px;
+            right: 35px;
+
+            font-size: 45px;
+
+            color: white;
+
+            cursor: pointer;
+
+            transition: 0.2s;
+        }
+
+        .close-image:hover {
+            color: #5edcff;
+
+            transform: scale(1.15);
+        }
+
+        /* =========================================================
+                            STATS
+        ========================================================= */
+
+        .stats {
+            max-width: 1000px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(180px, 1fr));
 
             gap: 20px;
         }
@@ -262,18 +448,36 @@
             border-radius: 20px;
 
             background: rgba(255,255,255,0.06);
+
+            border: 1px solid rgba(100, 220, 255, 0.15);
+
+            transition: 0.3s;
+        }
+
+        .stat:hover {
+            transform: translateY(-5px);
+
+            border-color: #5edcff;
+
+            box-shadow:
+                0 0 25px rgba(0, 200, 255, 0.2);
         }
 
         .stat-number {
             font-size: 45px;
+
             color: #63ddff;
+
             font-weight: bold;
         }
 
-        /* QUIZ */
+        /* =========================================================
+                            QUIZ
+        ========================================================= */
 
         .quiz {
             max-width: 700px;
+
             margin: auto;
 
             text-align: center;
@@ -289,6 +493,7 @@
 
         .quiz-question {
             font-size: 28px;
+
             margin-bottom: 30px;
         }
 
@@ -298,14 +503,19 @@
 
         #quizResult {
             margin-top: 25px;
+
             font-size: 22px;
+
             min-height: 30px;
         }
 
-        /* SURVIVAL SECTION */
+        /* =========================================================
+                            SURVIVAL
+        ========================================================= */
 
         .survival {
             max-width: 800px;
+
             margin: auto;
 
             text-align: center;
@@ -322,6 +532,9 @@
                 );
 
             border: 1px solid rgba(100,220,255,0.3);
+
+            box-shadow:
+                0 0 40px rgba(0, 140, 255, 0.08);
         }
 
         .survival h2 {
@@ -330,21 +543,29 @@
 
         .survival p {
             margin: 20px 0;
+
             color: #ccefff;
+
             font-size: 19px;
+
             line-height: 1.6;
         }
 
-        /* FOOTER */
+        /* =========================================================
+                            FOOTER
+        ========================================================= */
 
         footer {
             text-align: center;
+
             padding: 60px 20px;
 
             color: #8ebbd1;
         }
 
-        /* FLOATING HEARTS */
+        /* =========================================================
+                            FLOATING HEARTS
+        ========================================================= */
 
         .heart {
             position: fixed;
@@ -361,18 +582,26 @@
         @keyframes floatUp {
 
             0% {
-                transform: translateY(0) rotate(0deg);
+                transform:
+                    translateY(0)
+                    rotate(0deg);
+
                 opacity: 1;
             }
 
             100% {
-                transform: translateY(-110vh) rotate(360deg);
+                transform:
+                    translateY(-110vh)
+                    rotate(360deg);
+
                 opacity: 0;
             }
 
         }
 
-        /* POPUP */
+        /* =========================================================
+                            POPUP
+        ========================================================= */
 
         .popup {
             position: fixed;
@@ -402,16 +631,41 @@
 
             border: 1px solid #5edcff;
 
-            box-shadow: 0 0 60px rgba(0,200,255,0.4);
+            box-shadow:
+                0 0 60px rgba(0,200,255,0.4);
+
+            animation: popupIn 0.3s ease;
+        }
+
+        @keyframes popupIn {
+
+            from {
+                transform: scale(0.7);
+
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+
+                opacity: 1;
+            }
+
         }
 
         .popup-box h2 {
             font-size: 35px;
+
             color: #63ddff;
+
             margin-bottom: 15px;
         }
 
-        @media(max-width:600px) {
+        /* =========================================================
+                            MOBILE
+        ========================================================= */
+
+        @media(max-width:800px) {
 
             nav {
                 padding: 15px;
@@ -419,8 +673,18 @@
 
             nav a {
                 margin-left: 8px;
+
                 font-size: 13px;
             }
+
+            .gallery {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+        }
+
+        @media(max-width:600px) {
 
             .hero p {
                 font-size: 18px;
@@ -428,7 +692,24 @@
 
             .secondary {
                 margin-left: 0;
+
                 margin-top: 10px;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-item img {
+                height: 350px;
+            }
+
+            .section-title {
+                font-size: 36px;
+            }
+
+            .survival h2 {
+                font-size: 35px;
             }
 
         }
@@ -437,32 +718,54 @@
 
 </head>
 
+
 <body>
 
-    <!-- NAVIGATION -->
+
+    <!-- =========================================================
+                            NAVIGATION
+    ========================================================= -->
 
     <nav>
 
         <div class="logo">
-            💙 EMMA!!! 
+            💙 EMMA!!!
         </div>
 
         <div>
-            <a href="#about">About</a>
-            <a href="#blue">Blue</a>
-            <a href="#quiz">Quiz</a>
+
+            <a href="#about">
+                About
+            </a>
+
+            <a href="#blue">
+                Blue
+            </a>
+
+            <a href="#gallery">
+                Gallery
+            </a>
+
+            <a href="#quiz">
+                Quiz
+            </a>
+
         </div>
 
     </nav>
 
 
-    <!-- HERO -->
+    <!-- =========================================================
+                            HERO
+    ========================================================= -->
 
     <section class="hero">
 
         <div class="hero-content">
 
-            <h1>EMMA!!!</h1>
+            <h1>
+                EMMA!!!
+            </h1>
 
             <p>
                 The completely unbiased website proving that Emma is amazing.
@@ -477,7 +780,9 @@
                 <button
                     class="secondary"
                     onclick="scrollToSection('about')">
+
                     Explore Website
+
                 </button>
 
             </div>
@@ -487,7 +792,9 @@
     </section>
 
 
-    <!-- ABOUT -->
+    <!-- =========================================================
+                            ABOUT
+    ========================================================= -->
 
     <section id="about">
 
@@ -495,13 +802,19 @@
             Why Emma Is <span>Amazing</span>
         </h2>
 
+
         <div class="cards">
+
 
             <div class="card">
 
-                <div class="card-icon">💙</div>
+                <div class="card-icon">
+                    💙
+                </div>
 
-                <h3>Elite Taste</h3>
+                <h3>
+                    Elite Taste
+                </h3>
 
                 <p>
                     Emma likes blue. This immediately demonstrates
@@ -510,11 +823,16 @@
 
             </div>
 
+
             <div class="card">
 
-                <div class="card-icon">⭐</div>
+                <div class="card-icon">
+                    ⭐
+                </div>
 
-                <h3>Simply Amazing</h3>
+                <h3>
+                    Simply Amazing
+                </h3>
 
                 <p>
                     After extensive scientific research,
@@ -524,11 +842,16 @@
 
             </div>
 
+
             <div class="card">
 
-                <div class="card-icon">🏆</div>
+                <div class="card-icon">
+                    🏆
+                </div>
 
-                <h3>10/10</h3>
+                <h3>
+                    10/10
+                </h3>
 
                 <p>
                     Independent researchers have rated Emma
@@ -537,12 +860,15 @@
 
             </div>
 
+
         </div>
 
     </section>
 
 
-    <!-- BLUE -->
+    <!-- =========================================================
+                            BLUE
+    ========================================================= -->
 
     <section id="blue">
 
@@ -561,11 +887,13 @@
             </div>
 
             <p>
+
                 Emma loves blue.
 
                 <br><br>
 
                 Therefore blue is objectively the greatest color.
+
             </p>
 
         </div>
@@ -573,7 +901,120 @@
     </section>
 
 
-    <!-- STATS -->
+    <!-- =========================================================
+                            GALLERY
+    ========================================================= -->
+
+    <section id="gallery">
+
+        <h2 class="section-title">
+            📸 <span>Emma Gallery</span>
+        </h2>
+
+
+        <div class="gallery">
+
+
+            <div
+                class="gallery-item"
+                onclick="openImage('picture1.jpg')">
+
+                <img
+                    src="picture1.jpg"
+                    alt="Emma Picture 1">
+
+            </div>
+
+
+            <div
+                class="gallery-item"
+                onclick="openImage('picture2.jpg')">
+
+                <img
+                    src="picture2.jpg"
+                    alt="Emma Picture 2">
+
+            </div>
+
+
+            <div
+                class="gallery-item"
+                onclick="openImage('picture3.jpg')">
+
+                <img
+                    src="picture3.jpg"
+                    alt="Emma Picture 3">
+
+            </div>
+
+
+            <div
+                class="gallery-item"
+                onclick="openImage('picture4.jpg')">
+
+                <img
+                    src="picture4.jpg"
+                    alt="Emma Picture 4">
+
+            </div>
+
+
+            <div
+                class="gallery-item"
+                onclick="openImage('picture5.jpg')">
+
+                <img
+                    src="picture5.jpg"
+                    alt="Emma Picture 5">
+
+            </div>
+
+
+            <div
+                class="gallery-item"
+                onclick="openImage('picture6.jpg')">
+
+                <img
+                    src="picture6.jpg"
+                    alt="Emma Picture 6">
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+                        IMAGE POPUP
+    ========================================================= -->
+
+    <div
+        class="image-popup"
+        id="imagePopup"
+        onclick="closeImage(event)">
+
+        <div
+            class="close-image"
+            onclick="closeImage()">
+
+            ×
+
+        </div>
+
+        <img
+            id="popupImage"
+            src=""
+            alt="Expanded Emma Picture"
+            onclick="event.stopPropagation()">
+
+    </div>
+
+
+    <!-- =========================================================
+                            STATS
+    ========================================================= -->
 
     <section>
 
@@ -581,46 +1022,70 @@
             📊 Official Emma Statistics
         </h2>
 
+
         <div class="stats">
 
-            <div class="stat">
-
-                <div class="stat-number">100%</div>
-
-                <p>Amazing</p>
-
-            </div>
 
             <div class="stat">
 
-                <div class="stat-number">∞</div>
+                <div class="stat-number">
+                    100%
+                </div>
 
-                <p>Blue Enjoyment</p>
+                <p>
+                    Amazing
+                </p>
 
             </div>
+
 
             <div class="stat">
 
-                <div class="stat-number">10/10</div>
+                <div class="stat-number">
+                    ∞
+                </div>
 
-                <p>Overall Rating</p>
+                <p>
+                    Blue Enjoyment
+                </p>
 
             </div>
+
 
             <div class="stat">
 
-                <div class="stat-number">💙</div>
+                <div class="stat-number">
+                    10/10
+                </div>
 
-                <p>Blue Energy</p>
+                <p>
+                    Overall Rating
+                </p>
 
             </div>
+
+
+            <div class="stat">
+
+                <div class="stat-number">
+                    💙
+                </div>
+
+                <p>
+                    Blue Energy
+                </p>
+
+            </div>
+
 
         </div>
 
     </section>
 
 
-    <!-- QUIZ -->
+    <!-- =========================================================
+                            QUIZ
+    ========================================================= -->
 
     <section id="quiz">
 
@@ -628,23 +1093,28 @@
             🧠 The Emma Quiz
         </h2>
 
+
         <div class="quiz">
 
             <div class="quiz-question">
                 What is Emma's elite color?
             </div>
 
+
             <button onclick="quizAnswer('wrong')">
-                Red
+                ❤️ Red
             </button>
+
 
             <button onclick="quizAnswer('correct')">
                 💙 Blue
             </button>
 
+
             <button onclick="quizAnswer('wrong')">
-                Green
+                💚 Green
             </button>
+
 
             <div id="quizResult"></div>
 
@@ -653,22 +1123,31 @@
     </section>
 
 
-    <!-- SURVIVAL -->
+    <!-- =========================================================
+                            SURVIVAL
+    ========================================================= -->
 
     <section>
 
         <div class="survival">
 
-            <h2>🙏 Please Spare Me</h2>
+            <h2>
+                🙏 Please Spare Me
+            </h2>
 
             <p>
+
                 Emma, if you are reading this website,
                 please recognize the immense amount of effort
                 that went into documenting your greatness.
+
             </p>
 
+
             <button onclick="openPopup()">
+
                 Important Message
+
             </button>
 
         </div>
@@ -676,7 +1155,9 @@
     </section>
 
 
-    <!-- FOOTER -->
+    <!-- =========================================================
+                            FOOTER
+    ========================================================= -->
 
     <footer>
 
@@ -689,27 +1170,37 @@
     </footer>
 
 
-    <!-- POPUP -->
+    <!-- =========================================================
+                            MESSAGE POPUP
+    ========================================================= -->
 
-    <div class="popup" id="popup">
+    <div
+        class="popup"
+        id="popup">
 
         <div class="popup-box">
 
-            <h2>💙 IMPORTANT</h2>
+            <h2>
+                💙 IMPORTANT
+            </h2>
 
             <p>
+
                 Emma Hess is amazing.
 
                 <br><br>
 
                 Please remember this extremely important
                 scientific fact.
+
             </p>
 
             <br>
 
             <button onclick="closePopup()">
+
                 I Understand 💙
+
             </button>
 
         </div>
@@ -717,22 +1208,38 @@
     </div>
 
 
+    <!-- =========================================================
+                            JAVASCRIPT
+    ========================================================= -->
+
     <script>
+
+
+        /* =========================================================
+                            APPRECIATE
+        ========================================================= */
 
         function appreciate() {
 
             createHearts();
 
-            alert("💙 Emma appreciation activated.");
+            alert(
+                "💙 Emma appreciation activated."
+            );
 
         }
 
+
+        /* =========================================================
+                            HEARTS
+        ========================================================= */
 
         function createHearts() {
 
             for (let i = 0; i < 20; i++) {
 
-                const heart = document.createElement("div");
+                const heart =
+                    document.createElement("div");
 
                 heart.className = "heart";
 
@@ -749,6 +1256,7 @@
 
                 document.body.appendChild(heart);
 
+
                 setTimeout(() => {
 
                     heart.remove();
@@ -760,14 +1268,20 @@
         }
 
 
+        /* =========================================================
+                        BLUE EXPLOSION
+        ========================================================= */
+
         function blueExplosion() {
 
             createHearts();
 
-            document.body.style.transition = "0.3s";
+            document.body.style.transition =
+                "0.3s";
 
             document.body.style.background =
                 "radial-gradient(circle, #00cfff, #03152f)";
+
 
             setTimeout(() => {
 
@@ -779,10 +1293,17 @@
         }
 
 
+        /* =========================================================
+                            QUIZ
+        ========================================================= */
+
         function quizAnswer(answer) {
 
             const result =
-                document.getElementById("quizResult");
+                document.getElementById(
+                    "quizResult"
+                );
+
 
             if (answer === "correct") {
 
@@ -791,7 +1312,9 @@
 
                 createHearts();
 
-            } else {
+            }
+
+            else {
 
                 result.innerHTML =
                     "❌ WRONG. Please reconsider your answer.";
@@ -800,6 +1323,10 @@
 
         }
 
+
+        /* =========================================================
+                        SCROLL FUNCTION
+        ========================================================= */
 
         function scrollToSection(id) {
 
@@ -811,6 +1338,10 @@
 
         }
 
+
+        /* =========================================================
+                        MESSAGE POPUP
+        ========================================================= */
 
         function openPopup() {
 
@@ -829,7 +1360,73 @@
 
         }
 
+
+        /* =========================================================
+                        IMAGE GALLERY
+        ========================================================= */
+
+        function openImage(image) {
+
+            const popup =
+                document.getElementById(
+                    "imagePopup"
+                );
+
+            const popupImage =
+                document.getElementById(
+                    "popupImage"
+                );
+
+            popupImage.src = image;
+
+            popup.style.display = "flex";
+
+            document.body.style.overflow = "hidden";
+
+        }
+
+
+        function closeImage(event) {
+
+            if (
+                event &&
+                event.target &&
+                event.target.id === "popupImage"
+            ) {
+                return;
+            }
+
+            document
+                .getElementById("imagePopup")
+                .style.display = "none";
+
+            document.body.style.overflow = "";
+
+        }
+
+
+        /* =========================================================
+                        ESCAPE KEY
+        ========================================================= */
+
+        document.addEventListener(
+            "keydown",
+            function(event) {
+
+                if (event.key === "Escape") {
+
+                    closeImage();
+
+                    closePopup();
+
+                }
+
+            }
+        );
+
+
     </script>
+
 
 </body>
 
